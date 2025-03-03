@@ -1,0 +1,477 @@
+/* =========================================================================================IMPORTS */
+
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap");
+
+/* =========================================================================================ROOT */
+
+:root {
+  --fTitleMain: "Smooch Sans", serif;
+  --fTitleSub: "Alumni Sans Pinstripe", serif;
+  --colorMain: #d62044;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(/images/Main-images/Background-photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* F ALL V OF STS */
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+nav .logo_positioner {
+  background-color: var(--colorMain);
+  height: 100%;
+  width: 120px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .main_logo {
+  font-size: 4rem;
+}
+
+nav .menu_controls {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  right: 5%;
+  gap: 20px;
+}
+
+nav .menu_controls a {
+  font-family: var(--fTitleMain);
+  font-weight: 500;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: black;
+}
+
+nav .menu_icon {
+  position: relative;
+  width: 50px;
+  height: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav .menu_icon_one,
+nav .menu_icon_two {
+  width: 50px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+nav .menu_icon_one {
+  top: 0;
+}
+
+nav .menu_icon_two {
+  top: 80%;
+}
+
+nav .menu_icon:hover .menu_icon_one {
+  top: 20%;
+}
+
+nav .menu_icon:hover .menu_icon_two {
+  top: 60%;
+}
+
+/* =========================================================================================CONTACT INFO */
+.menu_contact_info {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 5%;
+}
+
+.menu_contact_info a {
+  text-decoration: none;
+  color: black;
+  font-family: var(--fTitleMain);
+  font-weight: 500;
+  font-size: 7rem;
+  font-style: italic;
+  position: relative;
+  width: fit-content;
+}
+
+.menu_contact_info a:nth-child(1):before {
+  content: "";
+  position: absolute;
+  border-bottom: 5px solid black;
+  border-radius: 50px;
+  bottom: 10px;
+  left: 0%;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+.menu_contact_info a:nth-child(2):before,
+.menu_contact_info a:nth-child(3):before {
+  content: "";
+  position: absolute;
+  border-bottom: 5px solid black;
+  border-radius: 50px;
+  bottom: 10px;
+  left: 0;
+  width: 0;
+  transition: all 0.3s ease-out;
+}
+
+.menu_contact_info a:nth-child(2):hover:before,
+.menu_contact_info a:nth-child(3):hover:before {
+  width: 100%;
+}
+
+nav .menu_icon.clicked {
+  transition: all 1s ease-in-out;
+}
+
+nav .menu_icon.clicked .menu_icon_one {
+  transform: rotate(45deg);
+  top: 50%;
+  width: 40px;
+}
+nav .menu_icon.clicked .menu_icon_two {
+  transform: rotate(-45deg);
+  top: 50%;
+  width: 40px;
+}
+nav .menu_icon.clicked:hover .menu_icon_one,
+nav .menu_icon.clicked:hover .menu_icon_two {
+  transform: rotate(35deg);
+}
+
+.hidden-contact {
+  display: none;
+}
+
+.body_content_hidden {
+  display: none;
+}
+
+.logo_positioner {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* =========================================================================================MAIN BODY */
+.body_main_content_wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.body_flex_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5%;
+}
+
+.body_left {
+  width: 50%;
+}
+.body_left h1 {
+  font-family: var(--fTitleMain);
+  font-size: 5rem;
+}
+.body_left p {
+  font-family: var(--fTitleSub);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.body_right {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding-top: 12%;
+}
+.body_right h3 {
+  font-family: var(--fTitleMain);
+  font-size: 2rem;
+  line-height: 0;
+}
+.body_right h2 {
+  font-family: var(--fTitleSub);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 0%;
+  padding-bottom: 5%;
+}
+.body_right a {
+  line-height: 0%;
+  font-family: var(--fTitleSub);
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+  margin-right: 2%;
+  position: relative;
+}
+.body_right a::before {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid black;
+  border-radius: 50px;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  transition: all 0.3s ease-out;
+}
+.body_right a:hover:before {
+  width: 100%;
+}
+
+/* EDITABLE PART OFS */
+
+.body_images {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.body_images .img1 {
+  width: 100%;
+  height: 800px;
+  background-color: red;
+  background: url(/images/Asset-images/Japan-1.jpg) center / cover no-repeat;
+  border-radius: 20px;
+}
+.body_images .img2 {
+  width: 100%;
+  height: 800px;
+  background-color: red;
+  background: url(/images/Asset-images/Japan-6.jpg) center / cover no-repeat;
+  border-radius: 20px;
+}
+
+/* CONTROL PANNEL FOR ALS */
+/* prev */
+.body_controls {
+  padding: 5% 0 7%;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+.prev {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  cursor: default;
+  font-family: var(--fTitleMain);
+  font-size: 1.5rem;
+  height: 50px;
+  color: transparent;
+  user-select: none;
+}
+.prev_icon {
+  position: relative;
+  width: 50px;
+  height: 100%;
+}
+.p1 {
+  width: 20px;
+  height: 2px;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+}
+.p2 {
+  width: 15px;
+  height: 2px;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transition: all 0.5s ease;
+}
+.p3 {
+  width: 15px;
+  height: 2px;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transition: all 0.5s ease;
+}
+
+.prev:hover .p2 {
+  transform: rotate(-45deg);
+  top: 39%;
+  left: 28%;
+  transition: all 0.5s ease;
+}
+.prev:hover .p3 {
+  transform: rotate(45deg);
+  top: 61%;
+  left: 28%;
+  transition: all 0.5s ease;
+}
+
+/* center */
+.center_icon {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.c1 {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+}
+.c2 {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+}
+.c3 {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+}
+.c4 {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+}
+
+.center_icon:hover {
+  transform: scale(0.98);
+  gap: 15%;
+  transition: all 0.5s ease;
+}
+
+/* next */
+.next {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  cursor: pointer;
+  font-family: var(--fTitleMain);
+  font-size: 1.5rem;
+  height: 50px;
+}
+.next_icon {
+  position: relative;
+  width: 50px;
+  height: 100%;
+}
+.n1 {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+}
+.n2 {
+  width: 15px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transition: all 0.5s ease;
+}
+.n3 {
+  width: 15px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transition: all 0.5s ease;
+}
+
+.next:hover .n2 {
+  transform: rotate(45deg);
+  top: 39%;
+  left: 45%;
+  transition: all 0.5s ease;
+}
+.next:hover .n3 {
+  transform: rotate(-45deg);
+  top: 61%;
+  left: 45%;
+  transition: all 0.5s ease;
+}
+
+/* footer */
+
+footer {
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--colorMain);
+}
+
+.f_left {
+  display: inline-flex;
+  align-items: center;
+}
+.f_left h1 {
+  font-family: var(--fTitleMain);
+  font-size: 3.5rem;
+  line-height: 0%;
+}
+.f_left p {
+  font-family: var(--fTitleSub);
+  font-size: 1.5rem;
+  line-height: 0%;
+  font-weight: 600;
+}
+
+.f_right {
+  display: inline-flex;
+  gap: 20px;
+}
+.f_right a {
+  text-decoration: none;
+  color: black;
+  font-family: var(--fTitleMain);
+  font-size: 1.5rem;
+  line-height: 0%;
+  font-weight: 600;
+  position: relative;
+}
+.f_right a:before {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid black;
+  border-radius: 50px;
+  bottom: -12px;
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+.f_right a:hover:before {
+  width: 0%;
+}
